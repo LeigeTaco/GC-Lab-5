@@ -31,11 +31,22 @@ namespace Lab5
 
             Console.WriteLine("Hello, welcome to the Factorial Calculator, please enter a  number 1 through 20 (inclusive).");
 
-            //long temp = 1;
-            int i = int.Parse(Console.ReadLine());
-            Console.WriteLine($"The factorial of {i} is " + Factorial(i));
+            char goAgain = 'y';
 
-            //20 is cap
+            do
+            {
+
+                int i = int.Parse(Console.ReadLine());
+                Console.WriteLine($"The factorial of {i} is " + Factorial(i));
+
+                Console.WriteLine("Would you like to play again? (Y/N)");
+                goAgain = Char.Parse(Console.ReadLine());
+
+                Console.WriteLine("Please enter another number 1-20");
+
+            } while (Char.ToLower(goAgain) == 'y');
+
+            Console.WriteLine("See ya next time...");
 
         }
 
